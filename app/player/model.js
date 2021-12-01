@@ -57,7 +57,7 @@ playerSchema.path('email').validate(async function (value){
     } catch (err) {
         throw err
     }
-}), attr => `${attr.value} Sudah Terdaftar`
+}, attr => `${attr.value} Sudah Terdaftar`
 
 playerSchema.pre('save', function (next){
     this.password = bcrypt.hashSync(this.password, HASH_ROUND)
